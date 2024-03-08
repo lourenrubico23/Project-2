@@ -1,0 +1,140 @@
+@use '../base' as *;
+@use '../layout' as *;
+@use '../abstract' as *;
+@use '../base' as *;
+@use '../component' as *;
+
+.banner{
+ &__wrapper{
+    min-height: 80rem;
+    @include flex(flex-start,center);
+ }
+ small{
+    font-size: clamp(4rem, 6vw, 10rem);
+    opacity: .5;
+    font-weight: bold;
+ }
+ h1{
+    font-size: clamp(8rem, 6vw,  16rem);
+    line-height: 1;
+    text-transform: uppercase;
+    @include flex (flex-start, flex-end);
+    
+ }
+ span{
+    width: 1.8rem;
+    height: 1.8rem;
+    background: $clr-accent;
+    display: block;
+    transform: translate(2rem,-1.7rem);
+ }
+ 
+}
+
+.about{
+    &__wrapper{
+        @include unevengrid(.5fr 1fr, 7rem);
+        
+    }
+    &__image{
+        
+            position: relative;
+            isolation: isolate;
+
+        &::after{
+            content: " ";
+            position: absolute;
+            top: 3rem;
+            left: 3rem;
+            border: .4rem solid $clr-accent;
+            background-color: transparent;
+            width: 100%;
+            height: 85%;
+            z-index: -1;
+        }
+    }
+    &__contact{
+        @include grid(1);
+        grid-column-gap: 10rem; 
+        @include mediaQuery{
+            @include grid(2);
+        }
+    }
+}
+
+.skills{
+    &__wrapper{
+        @include grid(1);
+        @include mediaQuery{
+            @include grid(2);
+        }
+    }
+    .skillbar{
+        width: 100%;
+        height: 1.5rem;
+        background-color: #363636;
+        position: relative;
+        &::before{
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10%;
+            height: 100%;
+            background: $clr-accent;
+        }
+
+    }
+    .skillbar.w-50::before{
+        width: 50%;
+    }
+    .skillbar.w-40::before{
+        width: 50%;
+    }
+    .skillbar.w-30::before{
+        width: 50%;
+    }
+}
+
+.portfolio{
+    &__img{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        
+        img{
+            @include imgCover(200px, 200px);
+        }
+    }
+}
+
+.services{
+    &__wrapper{
+        @include grid(1);
+        grid-gap: 4rem;
+        @include mediaQuery{
+            @include grid(3);
+        }
+        
+    }
+    &__card{
+        i{
+            display: flex;
+            justify-content: center;
+            color: $clr-accent;
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+        h5{
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    }
+
+}
+.contact{
+    &__wrapper{
+        @include grid(3);
+    }
+}
