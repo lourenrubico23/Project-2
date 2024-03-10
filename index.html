@@ -23,6 +23,12 @@
                     <li><a href="">CONTACT</a></li>
                 </ul>
                 <i>icon</i>
+
+                <div class="toggle__button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -177,7 +183,7 @@
                 <h2 class="text-accent" data-text="Portfolio">Portfolio</h2>
             </div>
 
-            <ul class="flex justify-center gap-6 mb-8">
+            <ul class="flex justify-center gap-2 mb-8">
                 <li><a href="">Logo</a></li>
                 <li><a href="">Branding</a></li>
                 <li><a href="">3D Modeling</a></li>
@@ -245,7 +251,7 @@
             <h2  class="text-white text-center mb-2">Contact me</h2>
             
             <div class="contact__wrapper">
-                <div class="contact__info mb-2">
+                <div class="contact__info">
                     <i class="fa-solid fa-mobile-screen" ></i>
                     <h5>Call Us on</h5>
                     <p>09723728272</p>
@@ -265,5 +271,16 @@
         </div>
     </section>
     <!-- CONTACT ME ENDS -->
+
+    <script>
+        const toggleBtn = document.querySelector(".toggle__button");
+        const nav = document.querySelector(".header__wrapper ul");
+        toggleBtn.addEventListener("click", () =>{
+            toggleBtn.classList.toggle('open');
+            nav.classList.toggle('open');
+        });
+
+        
+    </script>
 </body>
 </html>

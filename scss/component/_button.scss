@@ -1,7 +1,7 @@
 @use '../abstract' as  *;
 
 .btn{
-    background-color: $clr-primary;
+    background-color: $clr-white;
     border: none;
     margin: 2rem 0;
     border-radius: 1rem;
@@ -10,9 +10,12 @@
     @include flex(center,center);
     line-height: 1;
     transition: .5s ease;
+    color: $clr-accent;
+    width: fit-content;
+    margin: 0 auto;
 
     $colors: (
-    "primary": $clr-primary,
+    "white": $clr-white,
     "accent": $clr-accent,
 );
 
@@ -20,7 +23,7 @@
     &-#{$key} {
         background: #{$val};
         &:hover {
-            background: darken($val, 20);
+            background: #{$val};
         }
     }
 }
