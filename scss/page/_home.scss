@@ -140,10 +140,10 @@
 
 .services{
     &__wrapper{
-        @include grid(1);
-        grid-gap: 4rem;
+        @include grid(1,4rem);
         @include mediaQuery{
-            @include grid(3);
+            @include grid(3,4rem);
+            
         }
         
     }

@@ -272,12 +272,16 @@
     </section>
     <!-- CONTACT ME ENDS -->
 
+    <!-- SCRIPT -->
     <script>
-        const toggleBtn = document.querySelector(".toggle__button");
-        const nav = document.querySelector(".header__wrapper ul");
-        toggleBtn.addEventListener("click", () =>{
+        const toggleBtn = document.querySelector(".toggle__button"); //select the buttons
+        const nav = document.querySelector(".header__wrapper ul"); //select the ul
+        const body = document.querySelector("body");
+
+        toggleBtn.addEventListener("click", () =>{ // functionality, actions
             toggleBtn.classList.toggle('open');
             nav.classList.toggle('open');
+            body.classList.toggle('open');
         });
 
         
